@@ -4,10 +4,14 @@ import streamlit as st
 import subprocess
 # Vérifier et installer scikit-learn si nécessaire
 try:
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+    import sklearn
 except ModuleNotFoundError:
     st.write("❌ scikit-learn n'est PAS installé. Tentative d'installation...")
     subprocess.run(["pip", "install", "scikit-learn"])
+    import sklearn  # Réessayer d'importer après installation
+
+# Maintenant, importer les modules nécessaires
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
 # Vérifier si joblib est installé
 try:
