@@ -1,11 +1,10 @@
 import streamlit as st
 import numpy as np
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import streamlit as st
 import subprocess
 # Vérifier et installer scikit-learn si nécessaire
 try:
-    import sklearn
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 except ModuleNotFoundError:
     st.write("❌ scikit-learn n'est PAS installé. Tentative d'installation...")
     subprocess.run(["pip", "install", "scikit-learn"])
